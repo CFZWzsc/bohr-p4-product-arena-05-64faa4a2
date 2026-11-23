@@ -1,0 +1,43 @@
+{
+  "_comment": [
+    "阶段 B 的判断文件模板。复制到 /app/work/agent_judgement.json 后按实际材料填写。",
+    "quote 必须是材料里的逐字片段 —— 脚本会逐条校验，找不到就退回。",
+    "case_id 必须与 /input/case.json 里的 case_id 一致。",
+    "本文件是合成示例，段落 id 取自 examples/demo-case/material.md。"
+  ],
+  "case_id": "demo-product-arena-05-64faa4a2",
+  "claims": [
+    {
+      "text": "训练设置给出了 batch size、学习率、epoch 数与随机种子，可作为复现依据。",
+      "kind": "reported",
+      "evidence": [
+        {
+          "paragraph_id": "P002",
+          "quote": "batch size 为 64，学习率 3e-4，训练 120 个 epoch，随机种子为 42。"
+        }
+      ]
+    }
+  ],
+  "answers": [
+    {
+      "question": "按现有材料能否完整复现训练过程？",
+      "answer": "主要训练超参与随机种子已给出，但学习率调度策略与数据增强参数缺失，尚不能完整复现。",
+      "evidence": [
+        {
+          "paragraph_id": "P002",
+          "quote": "batch size 为 64，学习率 3e-4，训练 120 个 epoch，随机种子为 42。"
+        }
+      ]
+    }
+  ],
+  "deliverable": "（示例）依据材料写成的目标产物正文；实际运行时由执行 Agent 按题面填写。",
+  "contract_fields": {},
+  "uncertainties": [
+    {
+      "kind": "parameter_missing",
+      "item": "learning-rate schedule / data augmentation",
+      "detail": "材料明确写明这两项未记录在配置文件中",
+      "resolution": "写入待人工确认项，未补造取值"
+    }
+  ]
+}

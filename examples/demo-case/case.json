@@ -1,0 +1,18 @@
+{
+ "case_id": "demo-product-arena-05-64faa4a2",
+ "topic_id": "product-arena-05-64faa4a2",
+ "topic_title": "写作09｜方法与实验章节写作",
+ "difficulty": 1,
+ "domain": "writing",
+ "task_instruction": "演示用例：读取同目录的实验记录与配置材料，整理出可执行的方法与实验章节要点，每个参数与步骤都绑定原文证据；材料缺口与冲突写入 uncertainties。",
+ "output_contract": {
+  "deliverable": "覆盖步骤、实验设置、参数、数据集、对照与限制的方法与实验章节成稿",
+  "evidence_map": "步骤与参数到配置文件、日志、代码或作者说明的逐条定位",
+  "change_log": "修改动作、原因、人工确认项和未解决问题",
+  "preserved_facts": "参数取值、数据集版本与划分、随机种子、重复次数与单位不可凭空改变",
+  "case_id": "原样保留"
+ },
+ "evaluation": {
+  "mode": "demo"
+ }
+}

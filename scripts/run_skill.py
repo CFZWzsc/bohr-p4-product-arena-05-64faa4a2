@@ -357,7 +357,7 @@ def build_payload(case, task_text):
 def main():
     parser = argparse.ArgumentParser(description="Methods and experimental setup writing")
     parser.add_argument("--case", default=DEFAULT_CASE)
-    parser.add_argument("--out", "--output", default=DEFAULT_OUT)
+    parser.add_argument("--out", default=DEFAULT_OUT)
     parser.add_argument("--work", default=DEFAULT_WORK)
     args = parser.parse_args()
     stage, case = "load_case", {}
@@ -411,30 +411,4 @@ def main():
 
 
 if __name__ == "__main__":
-    _rc = 0
-    try:
-        _rc = main()
-    except SystemExit:
-        _rc = 0
-    except Exception as _exc:  # last-resort guard: never fail the run
-        try:
-            _p = os.path.join("/app/output", "result.json")
-            os.makedirs("/app/output", exist_ok=True)
-            with open(_p, "w", encoding="utf-8") as _fh:
-                json.dump({"case_id": "unknown", "status": "partial",
-                           "error": type(_exc).__name__,
-                           "limitations": ["unhandled_exception"]}, _fh,
-                          ensure_ascii=False, indent=2)
-        except OSError:
-            pass
-        _rc = 0
-    if not os.path.isfile("/app/output/result.json"):
-        try:
-            os.makedirs("/app/output", exist_ok=True)
-            with open("/app/output/result.json", "w", encoding="utf-8") as _fh:
-                json.dump({"case_id": "unknown", "status": "partial",
-                           "limitations": ["no_result_written"]}, _fh,
-                          ensure_ascii=False, indent=2)
-        except OSError:
-            pass
-    sys.exit(0)
+    sys.exit(main())

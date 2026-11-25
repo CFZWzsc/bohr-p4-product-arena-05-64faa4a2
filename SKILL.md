@@ -29,7 +29,7 @@ description: 当需要完成方法与实验章节写作并产出可复核结果�
 
 ## 交付物
 
-result.json（契约齐全）、可编辑方法与实验章节稿、evidence_map、change_log、参数与格式核对清单、材料缺口自报。
+methods.md、config-check.json、hyperparameters.json
 
 交付物的**内容契约**由运行时 `output_contract` 决定（见下）；下面「交付物落盘要求」给出的是必须真实存在的**文件**。
 

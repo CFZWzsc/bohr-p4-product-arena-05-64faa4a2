@@ -2,9 +2,9 @@
 
 本题：写作09｜方法与实验章节写作（product-arena-05-64faa4a2，赛道 writing）。
 
-能力定位：把零散的实验记录、配置与日志整理成有序、可执行、可复做的方法与实验章节，并给出逐条可核验的参数来源
+能力定位：写任务定义、数据、模型、训练配置、评测、基线六节，逐项核对 10 项配置并保留材料表格原样；未报告项显式标注。
 
-交付物：result.json（契约齐全）、方法与实验章节稿、evidence_map、change_log
+交付物：methods.md、config-check.json、hyperparameters.json
 
 
 ## 这个 Skill 做什么
